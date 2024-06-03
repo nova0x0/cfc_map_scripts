@@ -18,8 +18,6 @@ local function isMapEnt( ent )
 end
 
 hook.Add( "InitPostEntity", "GMS_BoreasCleaner", function()
-    if game.GetMap() ~= "gm_boreas" then return end
-
     for _, ent in ipairs( ents.GetAll() ) do
         if removeThese[ent:GetClass()] and isMapEnt( ent ) then
             SafeRemoveEntity( ent )
